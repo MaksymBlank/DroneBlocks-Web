@@ -1,6 +1,7 @@
 import * as firebase from './source/firebase';
 import * as blockly from './source/blockly';
 import * as helpers from './source/helpers';
+import * as code from './source/code';
 
 const connectTo = (drone) => {
     var os = helpers.getMobileOS();
@@ -101,7 +102,9 @@ const bind = () => {
             $("#codeView").removeClass("hidden");
             $("#codeView").addClass("block");
             $("#codeViewButton a").html("X");
-            $("#code").html(PR.prettyPrintOne(Blockly.Python.workspaceToCode(blockly.workspace)));
+            // $("#code").html(PR.prettyPrintOne(Blockly.Python.workspaceToCode(blockly.workspace)));
+
+            code.showCode(Blockly.Python.workspaceToCode(blockly.workspace));
             $("#showCode").text("Hide Mission Code");
         } else {
             $("#showCode").text("Show Mission Code");
@@ -210,6 +213,9 @@ $(document).ready(() => {
     if(window.Blockly){
         // Init blockly
         blockly.init();
+
+        // Init code
+        code.init(document.querySelector('#codeInput'), blockly.workspace);
     }
 
     // Init firebase

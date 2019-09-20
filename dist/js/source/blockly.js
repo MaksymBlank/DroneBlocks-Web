@@ -53,9 +53,9 @@ const init = () => {
     workspace.addChangeListener(() => {
         BlocklyStorage.backupBlocks_(Blockly.getMainWorkspace());
   
-        if(document.getElementById("code")) {
-            document.getElementById("code").innerHTML = PR.prettyPrintOne(Blockly.Python.workspaceToCode(workspace));
-        }
+        // if(document.getElementById("code")) {
+        //     document.getElementById("code").innerHTML = PR.prettyPrintOne(Blockly.Python.workspaceToCode(workspace));
+        // }
     })
 
     if(getUrlParam("share") != null || getUrlParam("view") != null) {

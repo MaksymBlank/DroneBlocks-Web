@@ -6,6 +6,53 @@
     display: none;
 }
 
+.code-input-textarea{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background: transparent;
+    color: transparent;
+    z-index: 2;
+    caret-color: red;
+}
+
+.code-view .d-none{
+    display: none;
+}
+
+.code-view input.field{
+    width: 10px;
+    color: #3387CC;
+    display: inline-block;
+    border: none;
+    line-height: 1;
+    border-bottom: 2px solid red;
+    height: 18px;
+    margin: 0;
+}
+
+.tab{
+    margin-right: 40px;
+}
+
+.code-input-wrapper{
+    height: 500px;
+    position: relative;
+}
+
+.code-input-mirror{
+    background: 'black';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
 .missions-table td:nth-child(4){
     display: none;
 }
